@@ -1,12 +1,4 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+
 import asyncio
 import platform
 from sys import version as pyver
@@ -22,11 +14,11 @@ from pytgcalls.__version__ import __version__ as pytgver
 import config
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import YouTube, app
-from ERAVIBES.core.userbot import assistants
-from ERAVIBES.misc import SUDOERS, pymongodb
-from ERAVIBES.plugins import ALL_MODULES
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.core.userbot import assistants
+from CHUHAMUSIC.misc import SUDOERS, pymongodb
+from CHUHAMUSIC.plugins import ALL_MODULES
+from CHUHAMUSIC.utils.database import (
     get_global_tops,
     get_particulars,
     get_queries,
@@ -36,8 +28,8 @@ from ERAVIBES.utils.database import (
     get_top_chats,
     get_topp_users,
 )
-from ERAVIBES.utils.decorators.language import language, languageCB
-from ERAVIBES.utils.inline.stats import (
+from CHUHAMUSIC.utils.decorators.language import language, languageCB
+from CHUHAMUSIC.utils.inline.stats import (
     back_stats_buttons,
     back_stats_markup,
     get_stats_markup,
