@@ -1,13 +1,11 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
-
 
 from pyrogram.types import (
     InlineKeyboardButton,
@@ -17,8 +15,8 @@ from pyrogram.types import (
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import BANNED_USERS
-from ERAVIBES import app
-from ERAVIBES.utils.inlinequery import answer
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.inlinequery import answer
 
 
 @app.on_inline_query(~BANNED_USERS)
