@@ -1,27 +1,27 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 
 from pyrogram import filters
 from pyrogram.types import Message
 
 import config
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import (
     add_private_chat,
     get_private_served_chats,
     is_served_private_chat,
     remove_private_chat,
 )
-from ERAVIBES.utils.decorators.language import language
+from CHUHAMUSIC.utils.decorators.language import language
 
 AUTHORIZE_COMMAND = get_command("AUTHORIZE_COMMAND")
 UNAUTHORIZE_COMMAND = get_command("UNAUTHORIZE_COMMAND")
