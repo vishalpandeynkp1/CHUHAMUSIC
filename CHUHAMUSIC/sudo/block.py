@@ -1,22 +1,22 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import add_gban_user, remove_gban_user
-from ERAVIBES.utils.decorators.language import language
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import add_gban_user, remove_gban_user
+from CHUHAMUSIC.utils.decorators.language import language
 
 # Command
 BLOCK_COMMAND = get_command("BLOCK_COMMAND")
@@ -26,10 +26,10 @@ BLOCKED_COMMAND = get_command("BLOCKED_COMMAND")
 
 @app.on_message(filters.command(BLOCK_COMMAND) & SUDOERS)
 @language
-async def useradd(client, message: Message, _):
+async def usCHUHAdd(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
@@ -56,7 +56,7 @@ async def useradd(client, message: Message, _):
 async def userdel(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
