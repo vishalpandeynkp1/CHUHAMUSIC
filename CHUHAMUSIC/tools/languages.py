@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
@@ -14,9 +5,9 @@ from pyrogram.types import InlineKeyboardButton, Message
 
 from config import BANNED_USERS
 from strings import get_command, get_string, languages_present
-from ERAVIBES import app
-from ERAVIBES.utils.database import get_lang, set_lang
-from ERAVIBES.utils.decorators import ActualAdminCB, language, languageCB
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import get_lang, set_lang
+from CHUHAMUSIC.utils.decorators import ActualAdminCB, language, languageCB
 
 # Languages Available
 
