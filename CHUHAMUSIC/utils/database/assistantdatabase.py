@@ -1,17 +1,8 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 import random
 
-from ERAVIBES import userbot
-from ERAVIBES.core.mongo import mongodb
+from CHUHAMUSIC import userbot
+from CHUHAMUSIC.core.mongo import mongodb
 
 db = mongodb.assistants
 
@@ -41,7 +32,7 @@ async def save_assistant(chat_id, number):
 
 
 async def set_assistant(chat_id):
-    from ERAVIBES.core.userbot import assistants
+    from CHUHAMUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -55,7 +46,7 @@ async def set_assistant(chat_id):
 
 
 async def get_assistant(chat_id: int) -> str:
-    from ERAVIBES.core.userbot import assistants
+    from CHUHAMUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -82,7 +73,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from ERAVIBES.core.userbot import assistants
+    from CHUHAMUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -95,7 +86,7 @@ async def set_calls_assistant(chat_id):
 
 
 async def group_assistant(self, chat_id: int) -> int:
-    from ERAVIBES.core.userbot import assistants
+    from CHUHAMUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
