@@ -1,19 +1,10 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 
 from typing import Union
 
 from config import autoclean, chatstats, userstats
 from config.config import time_to_seconds
-from ERAVIBES.misc import db
+from CHUHAMUSIC.misc import db
 
 
 async def put_queue(
