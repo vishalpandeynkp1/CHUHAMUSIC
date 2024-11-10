@@ -1,11 +1,4 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
+
 #
 
 import os
@@ -15,20 +8,20 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from ERAVIBES import Carbon, YouTube, app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.misc import db
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import Carbon, YouTube, app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils.database import (
     add_active_video_chat,
     is_active_chat,
     is_video_allowed,
 )
-from ERAVIBES.utils.exceptions import AssistantErr
-from ERAVIBES.utils.inline.play import queue_markup, stream_markup, telegram_markup
-from ERAVIBES.utils.inline.playlist import close_markup
-from ERAVIBES.utils.pastebin import ERAbin
-from ERAVIBES.utils.stream.queue import put_queue, put_queue_index
-from ERAVIBES.utils.thumbnails import gen_qthumb, gen_thumb
+from CHUHAMUSIC.utils.exceptions import AssistantErr
+from CHUHAMUSIC.utils.inline.play import queue_markup, stream_markup, telegram_markup
+from CHUHAMUSIC.utils.inline.playlist import close_markup
+from CHUHAMUSIC.utils.pastebin import CHUHAbin
+from CHUHAMUSIC.utils.stream.queue import put_queue, put_queue_index
+from CHUHAMUSIC.utils.thumbnails import gen_qthumb, gen_thumb
 
 
 async def stream(
@@ -50,7 +43,7 @@ async def stream(
         if not await is_video_allowed(chat_id):
             raise AssistantErr(_["play_7"])
     if forceplay:
-        await ERA.force_stop_stream(chat_id)
+        await CHUHA.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['playlist_16']}\n\n"
         count = 0
@@ -98,7 +91,7 @@ async def stream(
                 except:
                     return await mystic.delete()
 
-                await ERA.join_call(
+                await CHUHA.join_call(
                     chat_id, original_chat_id, file_path, video=status, image=thumbnail
                 )
                 await put_queue(
@@ -131,13 +124,13 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await ERAbin(msg)
+            link = await CHUHAbin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
             else:
                 car = msg
-            carbon = await Carbon.generate(car, randint(100, 10000000))
+            carbon = await Carbon.genCHUHAte(car, randint(100, 10000000))
             upl = close_markup(_)
             return await app.send_photo(
                 original_chat_id,
@@ -185,7 +178,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await ERA.join_call(
+            await CHUHA.join_call(
                 chat_id, original_chat_id, file_path, video=status, image=thumbnail
             )
             await put_queue(
@@ -242,7 +235,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await ERA.join_call(chat_id, original_chat_id, file_path, video=None)
+            await CHUHA.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -292,7 +285,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await ERA.join_call(chat_id, original_chat_id, file_path, video=status)
+            await CHUHA.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -346,7 +339,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await ERA.join_call(
+            await CHUHA.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -402,7 +395,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await ERA.join_call(
+            await CHUHA.join_call(
                 chat_id,
                 original_chat_id,
                 link,
