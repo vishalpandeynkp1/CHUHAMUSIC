@@ -1,11 +1,4 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 import logging
 from functools import wraps
@@ -14,8 +7,8 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
 
 
 async def member_permissions(chat_id: int, user_id: int):
