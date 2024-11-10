@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
@@ -19,8 +19,8 @@ from pyrogram.types import (
 
 from config import BANNED_USERS, CLEANMODE_DELETE_MINS, OWNER_ID
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import (
     add_nonadmin_chat,
     cleanmode_off,
     cleanmode_on,
@@ -41,9 +41,9 @@ from ERAVIBES.utils.database import (
     set_playmode,
     set_playtype,
 )
-from ERAVIBES.utils.decorators.admins import ActualAdminCB
-from ERAVIBES.utils.decorators.language import language, languageCB
-from ERAVIBES.utils.inline.settings import (
+from CHUHAMUSIC.utils.decorators.admins import ActualAdminCB
+from CHUHAMUSIC.utils.decorators.language import language, languageCB
+from CHUHAMUSIC.utils.inline.settings import (
     audio_quality_markup,
     auth_users_markup,
     cleanmode_settings_markup,
@@ -51,7 +51,7 @@ from ERAVIBES.utils.inline.settings import (
     setting_markup,
     video_quality_markup,
 )
-from ERAVIBES.utils.inline.start import private_panel
+from CHUHAMUSIC.utils.inline.start import private_panel
 
 ### Command
 SETTINGS_COMMAND = get_command("SETTINGS_COMMAND")
