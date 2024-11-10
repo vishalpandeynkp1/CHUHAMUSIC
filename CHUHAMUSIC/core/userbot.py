@@ -24,35 +24,35 @@ clients = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
-            "ERAString1",
+            "CHUHAString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
         )
 
         self.two = Client(
-            "ERAString2",
+            "CHUHAString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
         )
 
         self.three = Client(
-            "ERAString3",
+            "CHUHAString3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
         )
 
         self.four = Client(
-            "ERAString4",
+            "CHUHAString4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
         )
 
         self.five = Client(
-            "ERAString5",
+            "CHUHAString5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
