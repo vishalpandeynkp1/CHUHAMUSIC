@@ -1,20 +1,20 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 
 from pyrogram import filters
 from pyrogram.types import Message
 
 from strings import get_command, get_string
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import (
     get_lang,
     is_maintenance,
     maintenance_off,
