@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1//blob/master/LICENSE >
 #
-# All rights reserved.
+# All rights reserved.A
 #
 
 
@@ -15,14 +15,14 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 import config
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import YouTube, app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.misc import db
-from ERAVIBES.utils.database import get_loop
-from ERAVIBES.utils.decorators import AdminRightsCheck
-from ERAVIBES.utils.inline.play import stream_markup, telegram_markup
-from ERAVIBES.utils.stream.autoclear import auto_clean
-from ERAVIBES.utils.thumbnails import gen_thumb
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils.database import get_loop
+from CHUHAMUSIC.utils.decorators import AdminRightsCheck
+from CHUHAMUSIC.utils.inline.play import stream_markup, telegram_markup
+from CHUHAMUSIC.utils.stream.autoclear import auto_clean
+from CHUHAMUSIC.utils.thumbnails import gen_thumb
 
 # Commands
 SKIP_COMMAND = get_command("SKIP_COMMAND")
@@ -60,7 +60,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         disable_web_page_preview=True,
                                     )
-                                    await ERA.stop_stream(chat_id)
+                                    await CHUHA.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -85,7 +85,7 @@ async def skip(cli, message: Message, _, chat_id):
                     disable_web_page_preview=True,
                 )
                 try:
-                    return await ERA.stop_stream(chat_id)
+                    return await CHUHA.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -94,7 +94,7 @@ async def skip(cli, message: Message, _, chat_id):
                     _["admin_10"].format(message.from_user.first_name),
                     disable_web_page_preview=True,
                 )
-                return await ERA.stop_stream(chat_id)
+                return await CHUHA.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -110,7 +110,7 @@ async def skip(cli, message: Message, _, chat_id):
         if n == 0:
             return await message.reply_text(_["admin_11"].format(title))
         try:
-            await ERA.skip_stream(chat_id, link, video=status)
+            await CHUHA.skip_stream(chat_id, link, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         button = telegram_markup(_, chat_id)
@@ -137,7 +137,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             return await mystic.edit_text(_["call_7"])
         try:
-            await ERA.skip_stream(chat_id, file_path, video=status)
+            await CHUHA.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_7"])
         button = stream_markup(_, videoid, chat_id)
@@ -157,7 +157,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await ERA.skip_stream(chat_id, videoid, video=status)
+            await CHUHA.skip_stream(chat_id, videoid, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         button = telegram_markup(_, chat_id)
@@ -170,7 +170,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["markup"] = "tg"
     else:
         try:
-            await ERA.skip_stream(chat_id, queued, video=status)
+            await CHUHA.skip_stream(chat_id, queued, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         if videoid == "telegram":
