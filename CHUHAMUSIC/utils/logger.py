@@ -1,15 +1,8 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 from config import LOG, LOG_GROUP_ID
-from ERAVIBES import app
-from ERAVIBES.utils.database import is_on_off
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import is_on_off
 
 
 async def play_logs(message, streamtype):
