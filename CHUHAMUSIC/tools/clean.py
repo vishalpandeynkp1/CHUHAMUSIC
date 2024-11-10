@@ -3,8 +3,8 @@ import shutil
 
 from pyrogram import filters
 
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
 
 
 @app.on_message(filters.command("clean") & SUDOERS)
