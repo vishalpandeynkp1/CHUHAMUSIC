@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/ > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
-# All rights reserved.
+# All rights reserved.A
 #
 
 import random
@@ -15,9 +15,9 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import db
-from ERAVIBES.utils.decorators import AdminRightsCheck
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils.decorators import AdminRightsCheck
 
 # Commands
 SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")
@@ -27,7 +27,7 @@ SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")
 @AdminRightsCheck
 async def admins(Client, message: Message, _, chat_id):
     if not len(message.command) == 1:
-        return await message.reply_text(_["general_2"])
+        return await message.reply_text(_["genCHUHAl_2"])
     check = db.get(chat_id)
     if not check:
         return await message.reply_text(_["admin_21"])
