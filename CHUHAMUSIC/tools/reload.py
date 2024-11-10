@@ -1,12 +1,4 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+
 
 import asyncio
 import logging
@@ -17,12 +9,12 @@ from pyrogram.types import CallbackQuery, Message
 
 from config import BANNED_USERS, adminlist, lyrical
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.misc import db
-from ERAVIBES.utils.database import get_authuser_names, get_cmode
-from ERAVIBES.utils.decorators import ActualAdminCB, AdminActual, language
-from ERAVIBES.utils.formatters import alpha_to_int
+from CHUHAMUSIC import app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils.database import get_authuser_names, get_cmode
+from CHUHAMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
+from CHUHAMUSIC.utils.formatters import alpha_to_int
 
 ### Multi-Lang Commands
 RELOAD_COMMAND = get_command("RELOAD_COMMAND")
@@ -59,7 +51,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await ERA.stop_stream(message.chat.id)
+        await CHUHA.stop_stream(message.chat.id)
     except:
         pass
     chat_id = await get_cmode(message.chat.id)
@@ -70,7 +62,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await ERA.stop_stream(chat_id)
+            await CHUHA.stop_stream(chat_id)
         except:
             pass
     return await mystic.edit_text("sᴜᴄᴇssғᴜʟʟʏ ʀᴇsᴛᴀʀᴛᴇᴅ. \nTʀʏ ᴘʟᴀʏɪɴɢ ɴᴏᴡ..")
