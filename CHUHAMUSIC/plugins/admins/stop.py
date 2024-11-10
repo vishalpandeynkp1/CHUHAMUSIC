@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1//blob/master/LICENSE >
 #
-# All rights reserved.
+# All rights reserved.A
 #
 
 import asyncio
@@ -23,11 +23,11 @@ from pyrogram.types import (
 
 from config import BANNED_USERS, adminlist
 from strings import get_string
-from ERAVIBES import app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.plugins import extra_plugins_enabled
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.plugins import extra_plugins_enabled
+from CHUHAMUSIC.utils.database import (
     delete_filter,
     get_assistant,
     get_cmode,
@@ -81,7 +81,7 @@ async def stop_music(cli, message: Message):
                 ]
             ]
         )
-        return await message.reply_text(_["general_4"], reply_markup=upl)
+        return await message.reply_text(_["genCHUHAl_4"], reply_markup=upl)
 
     if message.command[0][0] == "c":
         chat_id = await get_cmode(message.chat.id)
@@ -94,7 +94,7 @@ async def stop_music(cli, message: Message):
     else:
         chat_id = message.chat.id
     if not await is_active_chat(chat_id):
-        return await message.reply_text(_["general_6"])
+        return await message.reply_text(_["genCHUHAl_6"])
     is_non_admin = await is_nonadmin_chat(message.chat.id)
     if not is_non_admin:
         if message.from_user.id not in SUDOERS:
@@ -104,7 +104,7 @@ async def stop_music(cli, message: Message):
             else:
                 if message.from_user.id not in admins:
                     return await message.reply_text(_["admin_19"])
-    await ERA.st_stream(chat_id)
+    await CHUHA.st_stream(chat_id)
     await set_loop(chat_id, 0)
     await message.reply_text(_["admin_9"].format(message.from_user.mention))
 
@@ -112,7 +112,7 @@ async def stop_music(cli, message: Message):
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ERAVIBES import app
+from CHUHAMUSIC import app
 
 photo = [
     "https://envs.sh/qeq.jpg",
@@ -169,12 +169,12 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
                 reply_markup=keyboard,
             )
             # Perform actions like stopping streams or loops
-            await ERA.st_stream(chat_id)
+            await CHUHA.st_stream(chat_id)
             await set_loop(chat_id, 0)
             await app.unban_chat_member(chat_id, userbot.id)
             await asyncio.sleep(10)
     except UserNotParticipant:
-        await ERA.st_stream(chat_id)
+        await CHUHA.st_stream(chat_id)
         await set_loop(chat_id, 0)
         await app.unban_chat_member(chat_id, userbot.id)
         await asyncio.sleep(10)
@@ -210,7 +210,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
                 reply_markup=keyboard,
             )
 
-            await ERA.st_stream(chat_id)
+            await CHUHA.st_stream(chat_id)
             await set_loop(chat_id, 0)
             await asyncio.sleep(10)
     except UserNotParticipant:
@@ -226,7 +226,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             caption=left_message,
             reply_markup=keyboard,
         )
-        await ERA.st_stream(chat_id)
+        await CHUHA.st_stream(chat_id)
         await set_loop(chat_id, 0)
         await asyncio.sleep(10)
     except Exception as e:
@@ -238,7 +238,7 @@ async def brah(_, msg):
     chat_id = msg.chat.id
     try:
         await msg.reply("**😍ᴠɪᴅᴇᴏ ᴄʜᴀᴛ sᴛᴀʀᴛᴇᴅ🥳**")
-        await ERA.st_stream(chat_id)
+        await CHUHA.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
         return await msg.reply(f"**Error {e}**")
@@ -250,7 +250,7 @@ async def brah2(_, msg):
     chat_id = msg.chat.id
     try:
         await msg.reply("**😕ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ💔**")
-        await ERA.st_stream(chat_id)
+        await CHUHA.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
         return await msg.reply(f"**Error {e}**")
