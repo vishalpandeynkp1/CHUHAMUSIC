@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
-# All rights reserved.
-
+# All rights reserved.A
+#
 import random
 
 from pyrogram import filters
@@ -20,10 +20,10 @@ from config import (
     TELEGRAM_VIDEO_URL,
     adminlist,
 )
-from ERAVIBES import YouTube, app
-from ERAVIBES.core.call import ERA as ERA
-from ERAVIBES.misc import SUDOERS, db
-from ERAVIBES.utils.database import (
+from  import YouTube, app
+from CHUHAMUSIC.core.call import CHUH as CHUH
+from CHUHAMUSIC.misc import SUDOERS, db
+from CHUHAMUSIC.utils.database import (
     is_active_chat,
     is_music_playing,
     is_muted,
@@ -34,9 +34,9 @@ from ERAVIBES.utils.database import (
     mute_on,
     set_loop,
 )
-from ERAVIBES.utils.decorators.language import languageCB
-from ERAVIBES.utils.formatters import seconds_to_min
-from ERAVIBES.utils.inline import (
+from CHUHAMUSIC.utils.decorators.language import languageCB
+from CHUHAMUSIC.utils.formatters import seconds_to_min
+from CHUHAMUSIC.utils.inline import (
     close_markup,
     panel_markup_1,
     panel_markup_2,
@@ -46,9 +46,9 @@ from ERAVIBES.utils.inline import (
     stream_markup,
     stream_markup2,
 )
-from ERAVIBES.utils.inline.play import stream_markup
-from ERAVIBES.utils.stream.autoclear import auto_clean
-from ERAVIBES.utils.thumbnails import get_thumb
+from CHUHAMUSIC.utils.inline.play import stream_markup
+from CHUHAMUSIC.utils.stream.autoclear import auto_clean
+from CHUHAMUSIC.utils.thumbnails import get_thumb
 
 wrong = {}
 downvote = {}
@@ -192,7 +192,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         counter = bet[1]
     chat_id = int(chat)
     if not await is_active_chat(chat_id):
-        return await CallbackQuery.answer(_["general_6"], show_alert=True)
+        return await CallbackQuery.answer(_["genCHUHl_6"], show_alert=True)
     mention = CallbackQuery.from_user.mention
     if command == "UpVote":
         if chat_id not in votemode:
@@ -277,7 +277,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await ERA.pause_stream(chat_id)
+        await CHUH.pause_stream(chat_id)
         buttons = [
             [
                 InlineKeyboardButton(
@@ -296,7 +296,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await ERA.resume_stream(chat_id)
+        await CHUH.resume_stream(chat_id)
         buttons_resume = [
             [
                 InlineKeyboardButton(
@@ -320,7 +320,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await ERA.st_stream(chat_id)
+        await CHUH.st_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_9"].format(mention), reply_markup=close_markup(_)
@@ -331,14 +331,14 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_5"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
-        await ERA.mute_stream(chat_id)
+        await CHUH.mute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_6"].format(mention))
     elif command == "Unmute":
         if not await is_muted(chat_id):
             return await CallbackQuery.answer(_["admin_7"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
-        await ERA.unmute_stream(chat_id)
+        await CHUH.unmute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_8"].format(mention))
     elif command == "Loop":
         await CallbackQuery.answer()
@@ -380,7 +380,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await ERA.st_stream(chat_id)
+                        return await CHUH.st_stream(chat_id)
                     except:
                         return
             except:
@@ -394,7 +394,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         ),
                         reply_markup=close_markup(_),
                     )
-                    return await ERA.st_stream(chat_id)
+                    return await CHUH.st_stream(chat_id)
                 except:
                     return
         else:
@@ -426,7 +426,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await ERA.skip_stream(chat_id, link, video=status, image=image)
+                await CHUH.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_7"])
             button = stream_markup2(_, chat_id)
@@ -462,7 +462,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await ERA.skip_stream(chat_id, file_path, video=status, image=image)
+                await CHUH.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_7"])
             button = stream_markup(_, videoid, chat_id)
@@ -483,7 +483,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await ERA.skip_stream(chat_id, videoid, video=status)
+                await CHUH.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_7"])
             button = stream_markup2(_, chat_id)
@@ -506,7 +506,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await ERA.skip_stream(chat_id, queued, video=status, image=image)
+                await CHUH.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_7"])
             if videoid == "telegram":
@@ -595,7 +595,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await mystic.edit_text(_["admin_30"])
         try:
-            await ERA.seek_stream(
+            await CHUH.seek_stream(
                 chat_id,
                 file_path,
                 seconds_to_min(to_seek),
