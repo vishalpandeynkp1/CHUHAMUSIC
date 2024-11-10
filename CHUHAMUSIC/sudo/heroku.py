@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 import asyncio
 import math
 import os
@@ -25,15 +25,15 @@ from pyrogram import filters
 import config
 from config import OWNER_ID
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import HAPP, SUDOERS, XCB
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import HAPP, SUDOERS, XCB
+from CHUHAMUSIC.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from ERAVIBES.utils.decorators.language import language
-from ERAVIBES.utils.pastebin import ERAbin
+from CHUHAMUSIC.utils.decorators.language import language
+from CHUHAMUSIC.utils.pastebin import CHUHAbin
 
 # Commands
 GETLOG_COMMAND = get_command("GETLOG_COMMAND")
@@ -53,7 +53,7 @@ async def is_heroku():
 
 
 async def paste_neko(code: str):
-    return await ERAbin(code)
+    return await CHUHAbin(code)
 
 
 @app.on_message(
@@ -67,7 +67,7 @@ async def log_(client, message, _):
             if HAPP is None:
                 return await message.reply_text(_["heroku_1"])
             data = HAPP.get_log()
-            link = await ERAbin(data)
+            link = await CHUHAbin(data)
             return await message.reply_text(link)
         else:
             if os.path.exists(config.LOG_FILE_NAME):
@@ -142,7 +142,7 @@ async def vardel_(client, message, _):
             return await message.reply_text(_["heroku_4"])
         else:
             await message.reply_text(_["heroku_7"].format(check_var))
-            os.system(f"kill -9 {os.getpid()} && python3 -m ERAVIBES")
+            os.system(f"kill -9 {os.getpid()} && python3 -m CHUHAMUSIC")
 
 
 @app.on_message(filters.command(SETVAR_COMMAND) & filters.user(OWNER_ID))
@@ -171,7 +171,7 @@ async def set_var(client, message, _):
             await message.reply_text(_["heroku_9"].format(to_set))
         else:
             await message.reply_text(_["heroku_10"].format(to_set))
-        os.system(f"kill -9 {os.getpid()} && python3 -m ERAVIBES")
+        os.system(f"kill -9 {os.getpid()} && python3 -m CHUHAMUSIC")
 
 
 @app.on_message(filters.command(USAGE_COMMAND) & filters.user(OWNER_ID))
@@ -186,13 +186,13 @@ async def usage_dynos(client, message, _):
     dyno = await message.reply_text(_["heroku_12"])
     Heroku = heroku3.from_key(config.HEROKU_API_KEY)
     account_id = Heroku.account().id
-    useragent = (
+    usCHUHAgent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/80.0.3987.149 Mobile Safari/537.36"
     )
     headers = {
-        "User-Agent": useragent,
+        "User-Agent": usCHUHAgent,
         "Authorization": f"Bearer {config.HEROKU_API_KEY}",
         "Accept": "application/vnd.heroku+json; version=3.account-quotas",
     }
@@ -265,7 +265,7 @@ async def update_(client, message, _):
     _final_updates_ = f"{_update_response_} {updates}"
 
     if len(_final_updates_) > 4096:
-        url = await ERAbin(updates)
+        url = await CHUHAbin(updates)
         nrs = await response.edit(
             f"**ᴀ ɴᴇᴡ ᴜᴩᴅᴀᴛᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ʙᴏᴛ !**\n\n➣ ᴩᴜsʜɪɴɢ ᴜᴩᴅᴀᴛᴇs ɴᴏᴡ\n\n__**ᴜᴩᴅᴀᴛᴇs :**__\n\n[ᴄʜᴇᴄᴋ ᴜᴩᴅᴀᴛᴇs]({url})",
             disable_web_page_preview=True,
@@ -314,7 +314,7 @@ async def update_(client, message, _):
             )
     else:
         os.system("pip3 install --no-cache-dir -U -r requirements.txt")
-        os.system(f"kill -9 {os.getpid()} && python3 -m ERAVIBES")
+        os.system(f"kill -9 {os.getpid()} && python3 -m CHUHAMUSIC")
         exit()
 
 
@@ -342,15 +342,15 @@ async def restart_(_, message):
     await response.edit_text(
         "» ʙᴀʙᴜ ᴛʜᴏᴅᴀ ᴡᴀɪᴛ ᴋᴀʀᴏ, ғʀᴇsʜ ʜᴏ ᴋᴀʀ ᴀᴛɪ ʜᴜ ᴀᴘɴᴀ ᴅʏᴀɴ ʀᴀᴋʜɴᴀ..."
     )
-    os.system(f"kill -9 {os.getpid()} && python3 -m ERAVIBES")
+    os.system(f"kill -9 {os.getpid()} && python3 -m CHUHAMUSIC")
 
 
 import requests
 from pyrogram import filters
 
 import config
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
 
 # Heroku API base URL
 HEROKU_API_URL = "https://api.heroku.com/apps"
