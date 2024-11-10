@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 import asyncio
 
 from pyrogram import filters
@@ -14,26 +14,26 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import (
     ChatAdminRequired,
     InviteRequestSent,
-    UserAlreadyParticipant,
+    UsCHUHAlreadyParticipant,
     UserNotParticipant,
 )
 from pyrogram.types import InlineKeyboardMarkup
 
 from config import BANNED_USERS
-from ERAVIBES import app
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import (
     get_assistant,
     get_global_tops,
     get_particulars,
     get_userss,
 )
-from ERAVIBES.utils.decorators.language import languageCB
-from ERAVIBES.utils.inline.playlist import (
+from CHUHAMUSIC.utils.decorators.language import languageCB
+from CHUHAMUSIC.utils.inline.playlist import (
     botplaylist_markup,
     failed_top_markup,
     top_play_markup,
 )
-from ERAVIBES.utils.stream.stream import stream
+from CHUHAMUSIC.utils.stream.stream import stream
 
 loop = asyncio.get_running_loop()
 
@@ -122,7 +122,7 @@ async def server_to_play(client, CallbackQuery, _):
         try:
             await userbot.join_chat(invitelink)
             await asyncio.sleep(2)
-        except UserAlreadyParticipant:
+        except UsCHUHAlreadyParticipant:
             pass
         except InviteRequestSent:
             try:
@@ -225,6 +225,6 @@ async def server_to_play(client, CallbackQuery, _):
         )
     except Exception as e:
         ex_type = type(e).__name__
-        err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+        err = e if ex_type == "AssistantErr" else _["genCHUHAl_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()
