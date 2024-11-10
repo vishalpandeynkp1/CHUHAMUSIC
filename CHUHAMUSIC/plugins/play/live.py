@@ -1,20 +1,19 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
 
 from pyrogram import filters
 
 from config import BANNED_USERS
-from ERAVIBES import YouTube, app
-from ERAVIBES.utils.channelplay import get_channeplayCB
-from ERAVIBES.utils.decorators.language import languageCB
-from ERAVIBES.utils.stream.stream import stream
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.utils.channelplay import get_channeplayCB
+from CHUHAMUSIC.utils.decorators.language import languageCB
+from CHUHAMUSIC.utils.stream.stream import stream
 
 
 @app.on_callback_query(filters.regex("LiveStream") & ~BANNED_USERS)
@@ -63,7 +62,7 @@ async def play_live_stream(client, CallbackQuery, _):
             )
         except Exception as e:
             ex_type = type(e).__name__
-            err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+            err = e if ex_type == "AssistantErr" else _["genCHUHAl_3"].format(ex_type)
             return await mystic.edit_text(err)
     else:
         return await mystic.edit_text("Not a live stream")
