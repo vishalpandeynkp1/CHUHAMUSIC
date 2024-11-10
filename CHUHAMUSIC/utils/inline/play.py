@@ -11,7 +11,7 @@ import math
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from ERAVIBES.utils.formatters import time_to_seconds
+from CHUHAMUSIC.utils.formatters import time_to_seconds
 
 
 def to_small_caps(text):
@@ -324,8 +324,8 @@ import math
 
 from pyrogram.types import InlineKeyboardButton
 
-from ERAVIBES import app
-from ERAVIBES.utils.formatters import time_to_seconds
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.formatters import time_to_seconds
 
 
 def track_markup(_, videoid, user_id, channel, fplay):
