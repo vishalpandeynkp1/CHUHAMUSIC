@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 
 import asyncio
 
@@ -16,10 +16,10 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils import get_readable_time
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils import get_readable_time
+from CHUHAMUSIC.utils.database import (
     add_banned_user,
     get_banned_count,
     get_banned_users,
@@ -27,7 +27,7 @@ from ERAVIBES.utils.database import (
     is_banned_user,
     remove_banned_user,
 )
-from ERAVIBES.utils.decorators.language import language
+from CHUHAMUSIC.utils.decorators.language import language
 
 # Command
 GBAN_COMMAND = get_command("GBAN_COMMAND")
@@ -40,7 +40,7 @@ GBANNED_COMMAND = get_command("GBANNED_COMMAND")
 async def gbanuser(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         user = await app.get_users(user)
         user_id = user.id
@@ -85,7 +85,7 @@ async def gbanuser(client, message: Message, _):
 async def gungabn(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         user = await app.get_users(user)
         user_id = user.id
@@ -154,9 +154,9 @@ from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message, User
 
 from config import BANNED_USERS
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import add_banned_user, is_banned_user, remove_banned_user
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import add_banned_user, is_banned_user, remove_banned_user
 
 
 async def extract_user(m: Message) -> User:
