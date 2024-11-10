@@ -10,7 +10,7 @@
 
 from typing import Dict, List, Union
 
-from ERAVIBES.core.mongo import mongodb
+from CHUHAMUSIC.core.mongo import mongodb
 
 queriesdb = mongodb.queries
 userdb = mongodb.userstats
