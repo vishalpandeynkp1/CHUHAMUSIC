@@ -24,10 +24,10 @@ from pyrogram.types import (
 
 from config import BANNED_USERS, SONG_DOWNLOAD_DURATION, SONG_DOWNLOAD_DURATION_LIMIT
 from strings import get_command
-from ERAVIBES import YouTube, app
-from ERAVIBES.utils.decorators.language import language, languageCB
-from ERAVIBES.utils.formatters import convert_bytes
-from ERAVIBES.utils.inline.song import song_markup
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.utils.decorators.language import language, languageCB
+from CHUHAMUSIC.utils.formatters import convert_bytes
+from CHUHAMUSIC.utils.inline.song import song_markup
 
 # Command
 
