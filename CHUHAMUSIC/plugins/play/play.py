@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 import asyncio
 import random
 import string
@@ -19,23 +19,23 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from config import BANNED_USERS, lyrical
-from ERAVIBES import LOGGER, Apple, Resso, Saavn, SoundCloud, Spotify, Telegram, YouTube, app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.utils import seconds_to_min, time_to_seconds
-from ERAVIBES.utils.channelplay import get_channeplayCB
-from ERAVIBES.utils.database import add_served_chat, get_assistant, is_video_allowed
-from ERAVIBES.utils.decorators.language import languageCB
-from ERAVIBES.utils.decorators.play import PlayWrapper
-from ERAVIBES.utils.formatters import formats
-from ERAVIBES.utils.inline.play import (
+from CHUHAMUSIC import LOGGER, Apple, Resso, Saavn, SoundCloud, Spotify, Telegram, YouTube, app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.utils import seconds_to_min, time_to_seconds
+from CHUHAMUSIC.utils.channelplay import get_channeplayCB
+from CHUHAMUSIC.utils.database import add_served_chat, get_assistant, is_video_allowed
+from CHUHAMUSIC.utils.decorators.language import languageCB
+from CHUHAMUSIC.utils.decorators.play import PlayWrapper
+from CHUHAMUSIC.utils.formatters import formats
+from CHUHAMUSIC.utils.inline.play import (
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from ERAVIBES.utils.inline.playlist import botplaylist_markup
-from ERAVIBES.utils.logger import play_logs
-from ERAVIBES.utils.stream.stream import stream
+from CHUHAMUSIC.utils.inline.playlist import botplaylist_markup
+from CHUHAMUSIC.utils.logger import play_logs
+from CHUHAMUSIC.utils.stream.stream import stream
 
 user_last_message_time = {}
 user_command_count = {}
@@ -129,7 +129,7 @@ async def play_commnd(
                 if ex_type == "AssistantErr":
                     err = e
                 else:
-                    err = _["general_3"].format(ex_type)
+                    err = _["genCHUHAl_3"].format(ex_type)
                     LOGGER(__name__).error("An error occurred", exc_info=True)
                 return await mystic.edit_text(err)
             return await mystic.delete()
@@ -180,7 +180,7 @@ async def play_commnd(
                     err = e
                 else:
                     LOGGER(__name__).error("An error occurred", exc_info=True)
-                    err = _["general_3"].format(ex_type)
+                    err = _["genCHUHAl_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await mystic.delete()
         return
@@ -350,7 +350,7 @@ async def play_commnd(
                 if ex_type == "AssistantErr":
                     err = e
                 else:
-                    err = _["general_3"].format(ex_type)
+                    err = _["genCHUHAl_3"].format(ex_type)
                     LOGGER(__name__).error("An error occurred", exc_info=True)
                 return await mystic.edit_text(err)
             return await mystic.delete()
@@ -386,7 +386,7 @@ async def play_commnd(
                     err = e
                 else:
                     LOGGER(__name__).error("An error occurred", exc_info=True)
-                    err = _["general_3"].format(ex_type)
+                    err = _["genCHUHAl_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await mystic.delete()
         else:
@@ -413,7 +413,7 @@ async def play_commnd(
                     err = e
                 else:
                     LOGGER(__name__).error("An error occurred", exc_info=True)
-                    err = _["general_3"].format(ex_type)
+                    err = _["genCHUHAl_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await play_logs(message, streamtype="M3u8 or Index Link")
     else:
@@ -476,7 +476,7 @@ async def play_commnd(
             else:
                 LOGGER(__name__).error("An error occurred", exc_info=True)
 
-                err = _["general_3"].format(ex_type)
+                err = _["genCHUHAl_3"].format(ex_type)
             return await mystic.edit_text(err)
         await mystic.delete()
         return await play_logs(message, streamtype=streamtype)
@@ -604,7 +604,7 @@ async def play_music(client, CallbackQuery, _):
         )
     except Exception as e:
         ex_type = type(e).__name__
-        err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+        err = e if ex_type == "AssistantErr" else _["genCHUHAl_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()
 
@@ -620,7 +620,7 @@ async def anonymous_check(client, CallbackQuery):
         return
 
 
-@app.on_callback_query(filters.regex("ERAPlaylists") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("CHUHAPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -702,7 +702,7 @@ async def play_playlists_command(client, CallbackQuery, _):
         )
     except Exception as e:
         ex_type = type(e).__name__
-        err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+        err = e if ex_type == "AssistantErr" else _["genCHUHAl_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()
 
