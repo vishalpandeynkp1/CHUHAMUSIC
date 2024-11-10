@@ -18,7 +18,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
 import config
 from config import lyrical
-from ERAVIBES import app
+from CHUHAMUSIC import app
 
 from ..utils.formatters import convert_bytes, get_readable_time, seconds_to_min
 
