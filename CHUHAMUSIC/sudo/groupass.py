@@ -1,22 +1,22 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS, LOG_GROUP_ID
-from ERAVIBES import app
-from ERAVIBES.core.userbot import assistants
-from ERAVIBES.utils.assistant import get_assistant_details
-from ERAVIBES.utils.assistant import is_avl_assistant as assistant
-from ERAVIBES.utils.database import get_assistant, save_assistant, set_assistant
-from ERAVIBES.utils.decorators import AdminActual
+from CHUHAMUSIC import app
+from CHUHAMUSIC.core.userbot import assistants
+from CHUHAMUSIC.utils.assistant import get_assistant_details
+from CHUHAMUSIC.utils.assistant import is_avl_assistant as assistant
+from CHUHAMUSIC.utils.database import get_assistant, save_assistant, set_assistant
+from CHUHAMUSIC.utils.decorators import AdminActual
 
 
 @app.on_message(filters.command("changeassistant") & ~BANNED_USERS)
