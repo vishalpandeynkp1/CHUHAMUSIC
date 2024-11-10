@@ -1,21 +1,21 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
+
 
 from pyrogram import filters
 from pyrogram.types import Message
 
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import set_video_limit
-from ERAVIBES.utils.decorators.language import language
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import set_video_limit
+from CHUHAMUSIC.utils.decorators.language import language
 
 VIDEOLIMIT_COMMAND = get_command("VIDEOLIMIT_COMMAND")
 
