@@ -13,10 +13,10 @@ from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE
 from config import SUPPORT_GROUP as SUPPORT_CHAT
 from config import adminlist
 from strings import get_string
-from ERAVIBES import YouTube, app
-from ERAVIBES.core.call import _st_ as clean
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.core.call import _st_ as clean
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
@@ -27,7 +27,7 @@ from ERAVIBES.utils.database import (
     is_maintenance,
     is_served_private_chat,
 )
-from ERAVIBES.utils.inline import botplaylist_markup
+from CHUHAMUSIC.utils.inline import botplaylist_markup
 
 links = {}
 
