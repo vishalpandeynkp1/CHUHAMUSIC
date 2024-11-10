@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
-# All rights reserved.
+# All rights reserved.A
 #
 
 from pyrogram import filters
@@ -13,15 +13,15 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.utils.database import (
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import (
     delete_authuser,
     get_authuser,
     get_authuser_names,
     save_authuser,
 )
-from ERAVIBES.utils.decorators import AdminActual, language
-from ERAVIBES.utils.formatters import int_to_alpha
+from CHUHAMUSIC.utils.decorators import AdminActual, language
+from CHUHAMUSIC.utils.formatters import int_to_alpha
 
 # Command
 AUTH_COMMAND = get_command("AUTH_COMMAND")
@@ -34,7 +34,7 @@ AUTHUSERS_COMMAND = get_command("AUTHUSERS_COMMAND")
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
@@ -96,7 +96,7 @@ async def auth(client, message: Message, _):
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
