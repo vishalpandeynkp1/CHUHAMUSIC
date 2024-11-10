@@ -1,22 +1,21 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/CHUHAMUSIC > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
 # All rights reserved.
-#
 
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS, MONGO_DB_URI, OWNER_ID
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import SUDOERS
-from ERAVIBES.utils.database import add_sudo, remove_sudo
-from ERAVIBES.utils.decorators.language import language
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import SUDOERS
+from CHUHAMUSIC.utils.database import add_sudo, remove_sudo
+from CHUHAMUSIC.utils.decorators.language import language
 
 # Command
 ADDSUDO_COMMAND = get_command("ADDSUDO_COMMAND")
@@ -26,14 +25,14 @@ SUDOUSERS_COMMAND = get_command("SUDOUSERS_COMMAND")
 
 @app.on_message(filters.command(ADDSUDO_COMMAND) & filters.user(OWNER_ID))
 @language
-async def useradd(client, message: Message, _):
+async def usCHUHAdd(client, message: Message, _):
     if MONGO_DB_URI is None:
         return await message.reply_text(
             "**Dᴜᴇ ᴛᴏ ʙᴏᴛ's ᴘʀɪᴠᴀᴄʏ ɪssᴜᴇs, Yᴏᴜ ᴄᴀɴ'ᴛ ᴍᴀɴᴀɢᴇ sᴜᴅᴏ ᴜsᴇʀs ᴡʜᴇɴ ʏᴏᴜ'ʀᴇ ᴜsɪɴɢ Yᴜᴋᴋɪ's Dᴀᴛᴀʙᴀsᴇ.\n\n Pʟᴇᴀsᴇ ғɪʟʟ ʏᴏᴜʀ MONGO_DB_URI ɪɴ ʏᴏᴜʀ ᴠᴀʀs ᴛᴏ ᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ**"
         )
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
@@ -71,7 +70,7 @@ async def userdel(client, message: Message, _):
         )
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text(_["general_1"])
+            return await message.reply_text(_["genCHUHAl_1"])
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
