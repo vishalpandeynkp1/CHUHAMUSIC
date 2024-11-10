@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from ERAVIBES.utils.admin_check import admin_check
+from CHUHAMUSIC.utils.admin_check import admin_check
 
 USE_AS_BOT = True
 
