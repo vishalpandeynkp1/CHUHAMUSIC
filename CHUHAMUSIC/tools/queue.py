@@ -1,12 +1,4 @@
-#
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
-#
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+
 
 import asyncio
 
@@ -17,12 +9,12 @@ from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 import config
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import app
-from ERAVIBES.misc import db
-from ERAVIBES.utils import ERAbin, get_channeplayCB, seconds_to_min
-from ERAVIBES.utils.database import get_cmode, is_active_chat, is_music_playing
-from ERAVIBES.utils.decorators.language import language, languageCB
-from ERAVIBES.utils.inline import queue_back_markup, queue_markup
+from CHUHAMUSIC import app
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils import CHUHAbin, get_channeplayCB, seconds_to_min
+from CHUHAMUSIC.utils.database import get_cmode, is_active_chat, is_music_playing
+from CHUHAMUSIC.utils.decorators.language import language, languageCB
+from CHUHAMUSIC.utils.inline import queue_back_markup, queue_markup
 
 ###Commands
 QUEUE_COMMAND = get_command("QUEUE_COMMAND")
@@ -65,7 +57,7 @@ async def ping_com(client, message: Message, _):
         chat_id = message.chat.id
         cplay = False
     if not await is_active_chat(chat_id):
-        return await message.reply_text(_["general_6"])
+        return await message.reply_text(_["genCHUHAl_6"])
     got = db.get(chat_id)
     if not got:
         return await message.reply_text(_["queue_2"])
@@ -166,7 +158,7 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
     except:
         return
     if not await is_active_chat(chat_id):
-        return await CallbackQuery.answer(_["general_6"], show_alert=True)
+        return await CallbackQuery.answer(_["genCHUHAl_6"], show_alert=True)
     got = db.get(chat_id)
     if not got:
         return await CallbackQuery.answer(_["queue_2"], show_alert=True)
@@ -208,7 +200,7 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
         if "ǫᴜᴇᴜᴇᴅ" in msg:
             msg = msg.replace("ǫᴜᴇᴜᴇᴅ", "Queued")
 
-        link = await ERAbin(msg)
+        link = await CHUHAbin(msg)
         await CallbackQuery.edit_message_text(
             _["queue_3"].format(link), reply_markup=buttons
         )
@@ -227,7 +219,7 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
             if "ǫᴜᴇᴜᴇᴅ" in msg:
                 msg = msg.replace("ǫᴜᴇᴜᴇᴅ", "Queued")
 
-            link = await ERAbin(msg)
+            link = await CHUHAbin(msg)
             await asyncio.sleep(1)
             return await CallbackQuery.edit_message_text(
                 _["queue_3"].format(link), reply_markup=buttons
@@ -247,7 +239,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     except:
         return
     if not await is_active_chat(chat_id):
-        return await CallbackQuery.answer(_["general_6"], show_alert=True)
+        return await CallbackQuery.answer(_["genCHUHAl_6"], show_alert=True)
     got = db.get(chat_id)
     if not got:
         return await CallbackQuery.answer(_["queue_2"], show_alert=True)
