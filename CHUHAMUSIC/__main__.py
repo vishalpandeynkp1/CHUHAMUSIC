@@ -58,8 +58,8 @@ async def init():
     LOGGER("CHUHAMUSIC.plugins").info("Successfully Imported All Modules ")
 
     await userbot.start()
-    await ERA.start()
-    await ERA.decorators()
+    await CHAHU.start()
+    await CHAHU.decorators()
     LOGGER("CHUHAMUSIC").info("🎉 𝗖𝗛𝗨𝗛𝗔𝗠𝗨𝗦𝗜𝗖🥳𝗦𝗧𝗔𝗥𝗧𝗘𝗗🥳𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗙𝗨𝗟𝗟𝗬 🎊")
     await idle()
 
