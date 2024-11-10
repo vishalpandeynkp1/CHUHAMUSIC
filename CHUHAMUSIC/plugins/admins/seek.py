@@ -1,21 +1,21 @@
 #
-# Copyright (C) 2024 by IamDvis@Github, < https://github.com/IamDvis >.
+# Copyright (C) 2024 by vishalpandeynkp1@Github, < https://github.com/vishalpandeynkp1 >.
 #
-# This file is part of < https://github.com/IamDvis/DV-MUSIC > project,
+# This file is part of < https://github.com/vishalpandeynkp1/ > project,
 # and is released under the MIT License.
-# Please see < https://github.com/IamDvis/DV-MUSIC/blob/master/LICENSE >
+# Please see < https://github.com/vishalpandeynkp1/CHUHAMUSIC/blob/master/LICENSE >
 #
-# All rights reserved.
+# All rights reserved.A
 #
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ERAVIBES import YouTube, app
-from ERAVIBES.core.call import ERA
-from ERAVIBES.misc import db
-from ERAVIBES.utils import AdminRightsCheck, seconds_to_min
+from CHUHAMUSIC import YouTube, app
+from CHUHAMUSIC.core.call import CHUHA
+from CHUHAMUSIC.misc import db
+from CHUHAMUSIC.utils import AdminRightsCheck, seconds_to_min
 
 # Commands
 SEEK_COMMAND = get_command("SEEK_COMMAND")
@@ -59,7 +59,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
         if n == 0:
             return await message.reply_text(_["admin_30"])
     try:
-        await ERA.seek_stream(
+        await CHUHA.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
