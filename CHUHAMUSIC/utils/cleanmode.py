@@ -1,5 +1,5 @@
 from config import LOG_GROUP_ID
-from ERAVIBES import app
+from CHUHAMUSIC import app
 
 protected_messages = {}
 
