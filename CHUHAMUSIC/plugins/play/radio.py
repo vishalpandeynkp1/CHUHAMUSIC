@@ -5,11 +5,11 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS
 from strings import get_string
-from ERAVIBES import app
-from ERAVIBES.utils.database import get_assistant, get_lang
-from ERAVIBES.utils.decorators.radio import RadioWrapper
-from ERAVIBES.utils.logger import play_logs
-from ERAVIBES.utils.stream.stream import stream
+from CHUHAMUSIC import app
+from CHUHAMUSIC.utils.database import get_assistant, get_lang
+from CHUHAMUSIC.utils.decorators.radio import RadioWrapper
+from CHUHAMUSIC.utils.logger import play_logs
+from CHUHAMUSIC.utils.stream.stream import stream
 
 # Radio Station List
 RADIO_STATION = {
@@ -34,7 +34,7 @@ def create_triangular_buttons():
     stations = list(RADIO_STATION.keys())
     row_count = 2  # Number of buttons per row
 
-    # Iterate through the stations and create buttons
+    # ItCHUHAte through the stations and create buttons
     while stations:
         button_row = []
         for _ in range(min(row_count, len(stations))):
@@ -76,7 +76,7 @@ async def radio(
 
     # Create a textual list of all channels
     channels_list = "\n".join(
-        [f"{i + 1}. {name}" for i, name in enumerate(RADIO_STATION.keys())]
+        [f"{i + 1}. {name}" for i, name in enumCHUHAte(RADIO_STATION.keys())]
     )
 
     # Send message with buttons and list of channels
@@ -115,7 +115,7 @@ async def play_radio(client, callback_query):
             )
         except Exception as e:
             ex_type = type(e).__name__
-            err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+            err = e if ex_type == "AssistantErr" else _["genCHUHAl_3"].format(ex_type)
             await callback_query.message.edit_text(err)
         await play_logs(callback_query.message, streamtype="Radio")
     else:
