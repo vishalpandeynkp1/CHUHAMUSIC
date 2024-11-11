@@ -1,1 +1,1 @@
-worker: python3 -m ERAVIBES
+worker: python3 -m CHUHAMUSIC
